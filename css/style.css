@@ -1,0 +1,61 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+body {
+  background-color: rgb(211, 211, 211);
+}
+input:checked + label {
+  font-weight: 700;
+}
+
+input {
+  display: none;
+}
+
+label {
+  padding-left: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+label::before {
+  width: 12px;
+  height: 12px;
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  left: 0px;
+  top: 2px;
+  border-radius: 50px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.014);
+}
+
+label::after {
+  width: 9px;
+  height: 9px;
+  content: "";
+  background-color: coral;
+  position: absolute;
+  left: 1.5px;
+  top: 3.5px;
+  border-radius: 50px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.014);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+input:checked + label::after {
+  opacity: 1;
+}
+
+
+.form-group {
+  width: 100px;
+  display: flex;
+  position: relative;
+}
